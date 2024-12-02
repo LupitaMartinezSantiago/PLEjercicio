@@ -8,7 +8,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Cargar datos de ejemplo
+
 iris = load_iris()
 X = iris.data
 y = iris.target
