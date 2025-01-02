@@ -60,15 +60,15 @@ def index():
         print(f"Error al generar el gráfico de predicciones: {e}")
         return f"Error al generar el gráfico de predicciones: {e}"
 
-    # Ruta del archivo SVG del árbol de decisión (ya generado previamente)
+    
     tree_svg_path = 'static/arbol.svg'
 
-    # Verificar que el archivo SVG existe
+   
     if not os.path.exists(tree_svg_path):
         print(f"El archivo SVG no se encuentra en la ruta esperada: {tree_svg_path}")
         return f"Error: El archivo SVG no se encuentra en la ruta {tree_svg_path}"
 
-    # Renderizar la plantilla con el gráfico de predicciones y el archivo SVG
+    
     return render_template('index.html', plot_url=plot_path, tree_svg_url=tree_svg_path)
 
 if __name__ == '__main__':
