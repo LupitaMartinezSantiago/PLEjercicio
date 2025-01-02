@@ -20,16 +20,16 @@ def home():
 
 @app.route('/train', methods=['POST'])
 def train_model():
-    # Definir la grilla de hiperparámetros
+    
     param_grid = [
         {'n_estimators': [100, 500, 1000], 'max_leaf_nodes': [16, 24, 36]},
         {'bootstrap': [False], 'n_estimators': [100, 500]},
     ]
 
-    # Crear el clasificador
+   
     rnd_clf = RandomForestClassifier(n_jobs=-1, random_state=42)
 
-    # Configurar GridSearchCV
+   
     grid_search = GridSearchCV(rnd_clf, param_grid, cv=5,
                                scoring='f1_weighted', return_train_score=True)
 
