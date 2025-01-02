@@ -33,14 +33,12 @@ def train_model():
     grid_search = GridSearchCV(rnd_clf, param_grid, cv=5,
                                scoring='f1_weighted', return_train_score=True)
 
-    # Entrenar
     grid_search.fit(X_train, y_train)
 
-    # Obtener los mejores parámetros y resultados
+
     best_params = grid_search.best_params_
     best_score = grid_search.best_score_
 
-    # Evaluar el modelo
     y_pred = grid_search.best_estimator_.predict(X_test)
     report = classification_report(y_test, y_pred, target_names=iris.target_names)
 
