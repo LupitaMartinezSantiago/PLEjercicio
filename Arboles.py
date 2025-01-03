@@ -36,8 +36,8 @@ def index():
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-    # Definir el número de datos de entrenamiento que deseas utilizar
-    num_training_samples = min(5000, len(X_train))  # Evitar exceder el tamaño del dataset
+    
+    num_training_samples = min(5000, len(X_train))  
     X_train = X_train[:num_training_samples]
     y_train = y_train[:num_training_samples]
 
@@ -45,7 +45,7 @@ def index():
     model = RandomForestRegressor(n_estimators=100, random_state=0)
     model.fit(X_train, y_train)
 
-    # Graficar resultados del modelo Random Forest
+    
     try:
         plt.figure(figsize=(10, 5))
         plt.scatter(y_test, model.predict(X_test), color='blue')
