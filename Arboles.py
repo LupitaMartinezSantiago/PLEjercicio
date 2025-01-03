@@ -24,16 +24,16 @@ def index():
             df[column] = le.fit_transform(df[column])
             label_encoders[column] = le
 
-    # Separar características (X) y etiquetas (y)
+  
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1].values
 
-    # Escalado de características
+   
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     X = pd.DataFrame(X_scaled, columns=X.columns)
 
-    # Separar en conjuntos de entrenamiento y prueba
+    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
     # Definir el número de datos de entrenamiento que deseas utilizar
