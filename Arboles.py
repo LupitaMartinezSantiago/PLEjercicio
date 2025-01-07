@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 app = Flask(__name__)
 
-
+# Ruta del DataSet
 DATASET_PATH = '/home/lupita/Documentos/ForestRegresion/TotalFeatures-ISCXFlowMeter.csv'
 
 @app.route('/')
