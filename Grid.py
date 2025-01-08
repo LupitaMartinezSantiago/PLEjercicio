@@ -27,7 +27,7 @@ def train_model():
         {'bootstrap': [False], 'n_estimators': [100, 500]},
     ]
 
-   
+   #Random Forest
     rnd_clf = RandomForestClassifier(n_jobs=-1, random_state=42)
 
    
