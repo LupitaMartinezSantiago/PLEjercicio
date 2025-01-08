@@ -1,3 +1,4 @@
+#Declaracion de importaciones
 from flask import Flask, request, jsonify, render_template
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
